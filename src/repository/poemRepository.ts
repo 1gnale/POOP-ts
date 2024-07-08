@@ -1,7 +1,13 @@
-import prototype from "../components/prototype/prototype.json"
+import { IPoemRepository } from "./IPoemRepository";
 
-export class MockPoemRepository {
+export class MockPoemRepository implements IPoemRepository {
+  private data: any;
+
+  constructor(data: any) {
+    this.data = data;
+  }
+
   async getPoems() {
-    return prototype
+    return this.data;
   }
 }
