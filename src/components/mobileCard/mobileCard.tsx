@@ -2,15 +2,16 @@ import React from "react"
 
 interface CardProps {
     children: React.ReactNode;
+    title: string;
 }
 
-const Card: React.FunctionComponent<CardProps> = ({ children }) => {
+const MobileCard: React.FunctionComponent<CardProps> = ({ children, title }) => {
     return (
         <div className="card">
-            <h1>{"Titulo no encontrado"}</h1>
+            <h1>{title}</h1>
             {children}
         </div>
     )
 }
 
-export default Card
+export default MobileCard
