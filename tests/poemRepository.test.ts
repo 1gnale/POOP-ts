@@ -7,7 +7,7 @@ describe("poemRepository test", () => {
         let poems;
         
         await act(async () => {
-            const mockPoemRepository = new MockPoemRepository();
+            const mockPoemRepository = new MockPoemRepository(json);
             poems = await mockPoemRepository.getPoems();
         });
 
