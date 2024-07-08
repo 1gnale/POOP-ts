@@ -1,9 +1,10 @@
 import { IPoemRepository } from "./IPoemRepository";
+import { Poem } from "../types";
 
 export class MockPoemRepository implements IPoemRepository {
-  private data: any;
+  private data: Poem[];
 
-  constructor(data: any) {
+  constructor(data: Poem[]) {
     this.data = data;
   }
 
