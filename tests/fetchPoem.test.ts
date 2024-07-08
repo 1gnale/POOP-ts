@@ -1,6 +1,6 @@
 import { fetchPoem } from '../src/util/fetchPoem.ts';
 import { MockPoemRepository } from '../src/repository/poemRepository.ts';
-import json from '../src/components/prototype/prototype.json';
+import json from '../src/mockData/data.json';
 
 
 jest.mock("../src/repository/poemRepository", () => {

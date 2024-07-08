@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchPoem } from "../../util/fetchPoem.ts";
 import { Poem } from "../../types"
 import { MockPoemRepository } from "../../repository/poemRepository.ts";
-import json from "../prototype/prototype.json"
+import json from "../../mockData/data.json"
 
 const useGetPoems = (): Poem[] => {
     const poemRepo = new MockPoemRepository(json);

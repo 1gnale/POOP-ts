@@ -1,4 +1,4 @@
-import json from "../../src/components/prototype/prototype.json"
+import json from "../../src/mockData/data.json"
 
 
 describe('Prototype test', () => {

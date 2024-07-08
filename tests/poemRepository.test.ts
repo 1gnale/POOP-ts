@@ -1,6 +1,6 @@
 import { act } from 'react'; // Cambia la importación de act aquí
 import { MockPoemRepository } from '../src/repository/poemRepository';
-import json from '../src/components/prototype/prototype.json';
+import json from '../src/mockData/data.json';
 
 describe("poemRepository test", () => {
     it("poemRepository should return an array with poetry", async () => {
