@@ -16,12 +16,13 @@ const Layout: React.FunctionComponent = () => {
             <Header />
             {
                 screenSize > 960 ?
-                    poems.map((poem: Poem, idx: number) => (
-                        <DesktopCardPoemContainer key={idx} poem={poem} />
-                    )) :
-                        poems.length === 0 ?
-                                <h1>TODO - LOADER</h1>
-                            :           
+                    poems.length === 0 ?
+                        <h1>TODO - LOADER</h1>
+                        : <DesktopCardPoemContainer poems={poems} />
+                    :
+                    poems.length === 0 ?
+                        <h1>TODO - LOADER</h1>
+                        :
                         <MobileCardPoemContainer poems={poems} />
             }
             <Footer />

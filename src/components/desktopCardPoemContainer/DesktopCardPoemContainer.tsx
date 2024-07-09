@@ -4,16 +4,22 @@ import DesktopCard from "../desktopCard/DesktopCard.tsx";
 import Prototype from "../prototype/prototype.tsx";
 
 interface DesktopCardPoemContainerProps {
-    poem: Poem;
+    poems: Poem[];
 }
 
 
-const DesktopCardPoemContainer: React.FC<DesktopCardPoemContainerProps> = ({poem}) => {
+const DesktopCardPoemContainer: React.FC<DesktopCardPoemContainerProps> = ({poems}) => {
     return (
         <div className="desktopCardPoemContainer">
-            <DesktopCard title={poem.title}>
-                <Prototype poem={poem.text} />
-            </DesktopCard>
+            {
+                poems.map((poem: Poem, idx: number) => {
+                    return (
+                        <DesktopCard key={idx} title={poem.title}>
+                            <Prototype poem={poem.text} />
+                        </DesktopCard>
+                    )
+                })
+            }
         </div>
     )
 }
