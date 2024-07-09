@@ -9,6 +9,7 @@ Este proyecto es la migración del prototipo hecho en `jsx` a `tsx`. En busqueda
   -DesktopCardPoem
   -DesktopCardPoemContainer
 - Agregar tests e2e para corroborar el renderizado diferencial de mobile y desktop
+- Crear componente Loader
 - Estilizar los siguientes componentes:
   - Card
   - Header
