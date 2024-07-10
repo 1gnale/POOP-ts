@@ -7,7 +7,7 @@ interface CardProps {
 
 const MobileCard: React.FunctionComponent<CardProps> = ({ children, title }) => {
     return (
-        <div className="card">
+        <div className="mobileCard">
             <h1>{title}</h1>
             {children}
         </div>
