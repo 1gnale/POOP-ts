@@ -4,6 +4,7 @@ import DesktopCardPoemContainer from "../desktopCardPoemContainer/DesktopCardPoe
 import MobileCardPoemContainer from "../mobileCardPoemContainer/MobileCardPoemContainer.tsx";
 import useGetPoems from "../customeHooks/usePoem.ts";
 import useScreenSize from "../customeHooks/useScreenSize.ts";
+import Loader from "../loader/Loader.tsx";
 import { Poem } from "../../types";
 import React from "react";
 
@@ -17,11 +18,11 @@ const Layout: React.FunctionComponent = () => {
             {
                 screenSize > 960 ?
                     poems.length === 0 ?
-                        <h1>TODO - LOADER</h1>
+                        <Loader />
                         : <DesktopCardPoemContainer poems={poems} />
                     :
                     poems.length === 0 ?
-                        <h1>TODO - LOADER</h1>
+                    <Loader />
                         :
                         <MobileCardPoemContainer poems={poems} />
             }
