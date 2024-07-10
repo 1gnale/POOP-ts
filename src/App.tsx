@@ -1,4 +1,3 @@
-import './App.css'
 import Layout from './components/layout/Layout.tsx'
 
 function App(): JSX.Element {
