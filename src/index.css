@@ -13,4 +13,26 @@
 @font-face {
     font-family: 'Cascadia';
     src: url('./assets/font/Cascadia.ttf') format('truetype');
-  }
+}
+
+
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F3F4F6; 
+    border-radius: 9999px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a37800; 
+    border-radius: 9999px; 
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #a37800 #F3F4F6;
+}
