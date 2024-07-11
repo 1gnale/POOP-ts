@@ -10,7 +10,7 @@ interface DesktopCardPoemContainerProps {
 
 const DesktopCardPoemContainer: React.FC<DesktopCardPoemContainerProps> = ({poems}) => {
     return (
-        <div className="desktopCardPoemContainer">
+        <div className="p-8 desktopCardPoemContainer flex gap-9 flex-wrap">
             {
                 poems.map((poem: Poem, idx: number) => {
                     return (
