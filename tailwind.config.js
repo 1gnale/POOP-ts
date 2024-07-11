@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        "brown": "#a37800"
+      },
       fontFamily: {
         "Cascadia": ['Cascadia'],
       },

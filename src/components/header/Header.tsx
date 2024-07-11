@@ -3,7 +3,11 @@
 const Header = () => { //TODO Create a Header component
     return (
         <header>
-            <h1>HEADER - TODO</h1> 
+            <div className="flex justify-between h-6 bg-brown">
+                <button>Profile</button>
+                <button>Acerca De</button>
+                <button>Modo Oscuro</button>
+            </div>
         </header>
     );
 }
