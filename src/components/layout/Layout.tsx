@@ -13,7 +13,7 @@ const Layout: React.FunctionComponent = () => {
     const poems: Poem[] = useGetPoems();
 
     return (
-        <div>
+        <div className="bg-amber-100">
             <Header />
             {
                 screenSize > 960 ?
