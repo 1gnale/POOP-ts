@@ -13,21 +13,23 @@ const Layout: React.FunctionComponent = () => {
     const poems: Poem[] = useGetPoems();
 
     return (
-        <div className="bg-amber-100">
+        <>
             <Header />
-            {
-                screenSize > 960 ?
-                    poems.length === 0 ?
-                        <Loader />
-                        : <DesktopCardPoemContainer poems={poems} />
-                    :
-                    poems.length === 0 ?
-                    <Loader />
+            <div className="bg-amber-100 mt-20">
+                {
+                    screenSize > 960 ?
+                        poems.length === 0 ?
+                            <Loader />
+                            : <DesktopCardPoemContainer poems={poems} />
                         :
-                        <MobileCardPoemContainer poems={poems} />
-            }
-            <Footer />
-        </div>
+                        poems.length === 0 ?
+                            <Loader />
+                            :
+                            <MobileCardPoemContainer poems={poems} />
+                }
+                <Footer />
+            </div>
+        </>
     );
 }
 
