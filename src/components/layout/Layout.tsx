@@ -15,7 +15,7 @@ const Layout: React.FunctionComponent = () => {
     return (
         <>
             <Header />
-            <div className="bg-amber-100 mt-20">
+            <div className="bg-amber-100 mt-20 dark:bg-slate-700">
                 {
                     screenSize > 960 ?
                         poems.length === 0 ?
