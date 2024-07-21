@@ -22,7 +22,7 @@ const MobileCardPoemContainer: React.FC<MobileCardPoemContainerProps> = ({ poems
   const poem = poems[currentPoemIndex];
 
   return (
-    <div {...handlers} className="h-3/4 aspect-w-2 aspect-h-3 relative justify-center flex p-4">
+    <div {...handlers} className="h-3/4 relative justify-center flex p-4">
         <MobileCard title={poem.title}>
           <Prototype poem={poem.text} />
         </MobileCard>
