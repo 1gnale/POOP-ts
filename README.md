@@ -3,9 +3,11 @@
 Este proyecto es la migración del prototipo hecho en `jsx` a `tsx`. En busqueda de la escalabilidad y desarrollar buenas prácticas debo hacer esta migración a TS manteniendo la intención del prototipo. Mostrar lo aprendido, seguir aprendiendo y actualizarlo hasta llegar a una versión que me haga sentir orgulloso. Este proyecto es y debe ser mi reflejo.
 
 # TODO 
-- Estilizar los siguientes componentes:
-  - Footer
-  - Header (search bar)
+- Estilizar Select
+- Actualizar modelo ER de drawio
+- Reformular la logica de los filtros para incorporarlos dentro de los containers mobile y desktop
+- Incorporar Redux
+- Formular la logica para que la searchbar busque los poemas de un usuario especifico
 - Desarrollar tests para:
   - Header
   - Footer
