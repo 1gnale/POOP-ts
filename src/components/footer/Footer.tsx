@@ -5,6 +5,7 @@ const Footer = () => { // TODO Footer component
         <footer className="bg-white dark:bg-gray-900">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="flex justify-around">
+                    {/* Abstraer */}
                     <div>
                         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                         <ul className="text-gray-500 dark:text-gray-400 font-medium">
@@ -16,6 +17,7 @@ const Footer = () => { // TODO Footer component
                             </li>
                         </ul>
                     </div>
+                    {/* Abstraer */}
                     <div>
                         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                         <ul className="text-gray-500 dark:text-gray-400 font-medium">
