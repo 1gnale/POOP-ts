@@ -32,7 +32,7 @@ const DesktopCardPoemContainer: React.FC<DesktopCardPoemContainerProps> = ({ poe
     return (
         <div>
             <div className="p-8 desktopCardPoemContainer gap-x-32 gap-y-16 grid grid-cols-2 place-items-center">
-            <div className="col-span-full flex w-2/3 justify-center border border-red-400">
+            <div className="col-span-full flex w-2/3 justify-center">
                     <TagSelect data={exampleWords} defaultOption={exampleWords[0]} className="w-full" />
                 </div>
                 {
