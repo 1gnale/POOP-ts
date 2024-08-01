@@ -1,13 +1,13 @@
 import { IPoemRepository } from "../repository/IPoemRepository.ts";
 import { Poem } from "../types";
 
-export const fetchPoem = async (setPoemCallBack: (poems: Poem[]) => void, poemRepo: IPoemRepository) => {
+export const fetchPoem = async (poemRepo: IPoemRepository) => {
     try {
-        const poems = await poemRepo.getPoems()
-        setPoemCallBack(poems);
+        const poems: Poem[] = await poemRepo.getPoems()
+        return poems
     }
     catch (error) {
-        setPoemCallBack([]);
         console.error(error);
+        return [];
     }
 }
