@@ -1,6 +1,5 @@
 import React from 'react';
 import NavBarBurguerMenu from './BurguerMenu.tsx';
-import NavFilters from './NavFilters.tsx';
 import NavBar from './NavBar.tsx';
 
 const Header: React.FunctionComponent = () => {
@@ -9,7 +8,6 @@ const Header: React.FunctionComponent = () => {
         <NavBar>
             <>
                 <NavBarBurguerMenu />
-                <NavFilters />
             </>
         </NavBar>
     );
