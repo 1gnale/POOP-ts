@@ -11,3 +11,4 @@ Este proyecto es la migración del prototipo hecho en `jsx` a `tsx`. En busqueda
 - Desarrollar tests para:
   - Header
   - Footer
+- Migrar para mejorar arquitectura
