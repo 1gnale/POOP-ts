@@ -1,24 +1,35 @@
-import { fetchPoem } from '../src/util/fetchPoem.ts';
-import { MockPoemRepository } from '../src/repository/poemRepository.ts';
-import json from '../src/mockData/data.json';
-
-
-jest.mock("../src/repository/poemRepository", () => {
-  return {
-    MockPoemRepository: jest.fn().mockImplementation(() => {
-      return {
-        getPoems: jest.fn().mockResolvedValue([{ "poem1": "Line1|Line2|Line3", "poem2": "Line4|Line5|Line6" }]),
-      };
-    }),
-  };
-});
+import { fetchPoem } from '../src/util/fetchPoem';
+import { IPoemRepository } from '../src/repository/IPoemRepository';
+import { Poem } from '../src/types';
 
 describe('fetchPoem', () => {
-  it('should fetch poems and split them correctly', async () => {
-    const setPoemCallBack = jest.fn();
-    const poemRepo = new MockPoemRepository(json);
-    await fetchPoem(setPoemCallBack, poemRepo);
-    expect(setPoemCallBack).toHaveBeenCalledWith([{ "poem1": "Line1|Line2|Line3", "poem2": "Line4|Line5|Line6" }]);
-  });
+    let mockPoemRepo: jest.Mocked<IPoemRepository>;
 
+    beforeEach(() => {
+        mockPoemRepo = {
+            getPoems: jest.fn()
+        };
+    });
+
+    it('should return an array of poems on succes', async () => {
+        const mockPoems: Poem[] = [
+            { id: 1, title: 'Poema 1', text: 'Contenido del poema 1' },
+            { id: 2, title: 'Poema 2', text: 'Contenido del poema 2' }
+        ];
+        mockPoemRepo.getPoems.mockResolvedValue(mockPoems);
+
+        const result = await fetchPoem(mockPoemRepo);
+
+        expect(result).toEqual(mockPoems);
+        expect(mockPoemRepo.getPoems).toHaveBeenCalledTimes(1);
+    });
+
+    it('should return an empty array on error', async () => {
+        mockPoemRepo.getPoems.mockRejectedValue(new Error('Error al obtener poemas'));
+
+        const result = await fetchPoem(mockPoemRepo);
+
+        expect(result).toEqual([]);
+        expect(mockPoemRepo.getPoems).toHaveBeenCalledTimes(1);
+    });
 });
