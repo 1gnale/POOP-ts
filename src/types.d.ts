@@ -3,3 +3,8 @@ export type Poem = {
     title: string;
     text: string;
 }
+
+export type Tags = {
+    id: number;
+    name: string;
+}
