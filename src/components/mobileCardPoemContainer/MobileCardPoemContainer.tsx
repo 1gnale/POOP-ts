@@ -21,13 +21,13 @@ interface OptionType {
 const MobileCardPoemContainer: React.FC<MobileCardPoemContainerProps> = ({ poems }) => {
   const { currentPoemIndex, nextPoem, prevPoem } = usePoemIndex(poems);
 
-  const tags : Tags[] = useAppSelector((state) => state.tags.tags);
-    const options: OptionType[] = tags.map((tag) => {
-        return {
-            value: tag.id.toString(),
-            label: tag.name
-        }
-    });
+  const tags: Tags[] = useAppSelector((state) => state.tags.tags);
+  const options: OptionType[] = tags.map((tag) => {
+    return {
+      value: tag.id.toString(),
+      label: tag.name
+    }
+  });
 
   const handlers = useSwipeable({
     onSwipedLeft: () => nextPoem(),
@@ -43,10 +43,13 @@ const MobileCardPoemContainer: React.FC<MobileCardPoemContainerProps> = ({ poems
 
   return (
     <div {...handlers} className="h-3/4 relative justify-center flex flex-wrap p-2">
-      <TagSelect data={options} className="w-full sm:w-2/3 mb-7" />
-        <MobileCard title={poem.title}>
-          <Prototype poem={poem.text} />
-        </MobileCard>
+      <div className="col-span-full flex flex-col w-full justify-center">
+        <TagSelect data={options} className="w-full" />
+        <p className="text-gray-400 text-center text-xl">Poems finded: {poems.length}</p>
+      </div>
+      <MobileCard title={poem.title}>
+        <Prototype poem={poem.text} />
+      </MobileCard>
     </div>
   );
 }

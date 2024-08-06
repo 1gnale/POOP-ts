@@ -27,8 +27,9 @@ const DesktopCardPoemContainer: React.FC<DesktopCardPoemContainerProps> = ({ poe
     return (
         <div>
             <div className="p-8 desktopCardPoemContainer gap-x-32 gap-y-16 grid grid-cols-2 place-items-center">
-            <div className="col-span-full flex w-2/3 justify-center">
+            <div className="col-span-full flex flex-col w-2/3 justify-center">
                     <TagSelect data={options} className="w-full" />
+                    <p className="text-gray-400 text-lg">Poems finded: {poems.length}</p>
                 </div>
                 {
                     poems.map((poem: Poem, idx: number) => {
