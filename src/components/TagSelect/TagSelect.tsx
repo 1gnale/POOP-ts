@@ -5,7 +5,6 @@ import makeAnimated from 'react-select/animated';
 
 
 interface TagSelectProps {
-  defaultOption: OptionType;
   data: OptionType[];
   className: string;
 }
@@ -15,7 +14,7 @@ interface OptionType {
   label: string;
 }
 
-const TagSelect: React.FunctionComponent<TagSelectProps> = ({ defaultOption, data, className }) => {
+const TagSelect: React.FunctionComponent<TagSelectProps> = ({ data, className }) => {
   const animatedComponents = makeAnimated()
 
   return (
@@ -23,7 +22,6 @@ const TagSelect: React.FunctionComponent<TagSelectProps> = ({ defaultOption, dat
       <Select<OptionType, true>
         closeMenuOnSelect={false}
         components={animatedComponents}
-        defaultValue={defaultOption}
         isMulti
         options={data}
       />
